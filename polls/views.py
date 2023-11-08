@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render 
+from .models import Carro
 
-# Create your views here.
+
+def Carros (request):
+    carro = Carro.objects.all()
+    return render(request, 'polls/index.html', {'carro': carro})
