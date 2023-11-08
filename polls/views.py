@@ -1,7 +1,7 @@
 from django.shortcuts import render 
-from .models import Carro
+from .models import Aluguel
 
 
 def Carros (request):
-    carro = Carro.objects.all()
-    return render(request, 'polls/index.html', {'carro': carro})
+    aluguels = Aluguel.objects.all()
+    return render(request, 'polls/index.html', {'aluguels': aluguels})

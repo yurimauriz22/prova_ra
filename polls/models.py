@@ -15,6 +15,7 @@ class Carro(models.Model):
 
 class Aluguel(models.Model):
     carro = models.ForeignKey(Carro, on_delete=models.CASCADE)
+    
 
     def __str__(self):
         return self.carro.nome

@@ -9,6 +9,7 @@
             background-color: #00ffff;
             position:relative;
             left: 500px;
+            height: 100%;
 
         }
 
@@ -20,7 +21,7 @@
 
 </head>
 <body>
-    {%if carro%}
+    {%if aluguels %}
     <table border="1">
         <tr>
             <td>Nome</td>
@@ -28,12 +29,14 @@
             <td>Ano</td>
             <td>Imagem</td>
         </tr>
+        {% for aluguel in aluguels %}
+        
         <tr>
-            {%for Carro in carro%}
-            <td>{{ Carro.nome }}</td>
-            <td>{{ Carro.marca }}</td>
-            <td>{{ Carro.ano }}</td>   
-            <td><img src="{{ Carro.imagem }}"></td>
+            
+            <td>{{ aluguel.carro.nome }}</td>
+            <td>{{ aluguel.carro.marca }}</td>
+            <td>{{ aluguel.carro.ano }}</td>   
+            <td><img src="{{ aluguel.carro.imagem }}"></td>
             {% endfor %}
         </tr>
     </table>
